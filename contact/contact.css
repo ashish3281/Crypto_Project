@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --primary-color: #2196f3;
+    --secondary-color: #555;
+    --background-color: #f5f5f5;
+    --raisin-black: hsl(225, 15%, 16%);
+    --form-width: 60%;
+    --max-form-width: 600px;
+    --label-color: #999;
+    --label-top-position: 10px;
+    --label-left-position: 10px;
+    --input-border-color: #ddd;
+    --button-background-color: var(--primary-color);
+    --button-hover-background-color: #1976d2;
+  }
+  
+  .hero {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--raisin-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px;
+  }
+  
+  .form-container {
+    flex: 1;
+    max-width: var(--form-width);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .heading {
+    text-align: center;
+    color: var(--background-color);
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .subheading {
+    text-align: center;
+    color: var(--background-color);
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  
+  .map {
+    /* Add your map styles here */
+    width: 100%;
+    height: 400px;
+    margin-bottom: 30px;
+  }
+  
+  .contact-info {
+    flex: 1;
+    margin-left: 30px;
+    text-align: center;
+  }
+  
+  .social-links {
+    margin-bottom: 20px;
+  }
+  
+  .social-links a {
+    color: var(--background-color);
+    font-size: 20px;
+    margin-right: 10px;
+    transition: color 0.2s;
+  }
+  
+  .social-links a:hover {
+    color: var(--primary-color);
+  }
+  
+  .address,
+  .email,
+  .phone {
+    color: var(--background-color);
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  form {
+    width: 100%;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    outline: 0;
+    border: 1px solid var(--input-border-color);
+    color: var(--secondary-color);
+    background: var(--background-color);
+    font-size: 15px;
+    border-radius: 4px;
+  }
+  
+  label {
+    height: 100%;
+    position: absolute;
+    left: var(--label-left-position);
+    top: var(--label-top-position);
+    padding: 0 5px;
+    color: var(--label-color);
+    cursor: text;
+    transition: 0.2s;
+  }
+  
+  button {
+    padding: 12px 0;
+    color: #fff;
+    outline: none;
+    background-color: var(--button-background-color);
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  
+  button:hover {
+    background-color: var(--button-hover-background-color);
+  }
+  
+  input:focus ~ label,
+  input:valid ~ label,
+  textarea:focus ~ label,
+  textarea:valid ~ label {
+    top: -15px;
+    font-size: 12px;
+    color: var(--primary-color);
+  }
+  
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .row .input-group {
+    flex-basis: 48%;
+  }
+  
+  .success-message,
+  .error-message {
+    display: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  .success-message {
+    color: #388e3c;
+    background-color: #c8e6c9;
+  }
+  
+  .error-message {
+    color: #d32f2f;
+    background-color: #ffcdd2;
+  }
+  .image-container {
+    flex: 1;
+    margin-left: 30px;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }  
+  /* Global styles */
+
+/* ... Existing styles ... */
+
+/* Responsive styles */
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-container {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .contact-info {
+    margin-left: 0;
+  }
+
+  .input-group,
+  label {
+    width: 100%;
+  }
+
+  button {
+    width: auto;
+  }
+
+  .image-container {
+    order: -1;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heading {
+    font-size: 28px;
+  }
+
+  .subheading {
+    font-size: 20px;
+  }
+
+  /* .image-container {
+    //display: none;
+  } */
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="contact.css">
+    
+    <script src="https://kit.fontawesome.com/7b16804764.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="form-container">
+                <form action="javascript:sendEmail()" method="post">
+                    <div class="row">
+                        <div class="input-group">
+                            <input type="text" id="name" required>
+                            <label for="name"><i class="fa-solid fa-user"></i> Your Name</label>
+                        </div> 
+                        <div class="input-group">
+                            <input type="text" id="number" required>
+                            <label for="number"><i class="fa-solid fa-phone"></i> Phone No.</label>
+                        </div> 
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="email" id="email" required>
+                        <label for="email"><i class="fa-solid fa-envelope"></i> Email Id</label>
+                    </div> 
+                            
+                    <div class="input-group">
+                        <textarea id="message" rows="8" required></textarea>
+                        <label for="message"><i class="fa-solid fa-message"></i> Your Message</label>
+                    </div> 
+                                
+                    <button type="submit"><i class="fa-solid fa-paper-plane"></i> SUBMIT</button>
+                                
+                </form>
+                <div class="success-message"></div>
+            </div>
+            <div class="contact-info">
+                <h1 class="heading">Get in Touch</h1>
+               
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <div class="image-container">
+                    <img src="F:\Crypto_project\crytocurriency\contact\contact.jpg" alt="Image">
+                </div>
+                <!-- <p class="address">
+                    123 Street, City,
+                    <br>
+                    Country
+                </p>
+                <p class="email">Email: info@example.com</p>
+                <p class="phone">Phone: +1 123 456 7890</p> -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+            var name = $('#name').val();
+            var number = $('#number').val();
+            var email = $('#email').val();
+            var message = $('#message').val();
+
+            var Body = 'Name: ' + name + '<br>Number: ' + number + '<br>Email: ' + email + '<br>Message: ' + message;
+        
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "ashishgoyal3281@gmail.com",
+                Password: "6BCE11BDC1A21DFB2129523E252639D6B02E",
+                To: 'ashish_206010@saitm.org',
+                From: "ashishgoyal3281@gmail.com",
+                Subject: "New message on contact form",
+                Body: Body
+            }).then(
+                message => {
+                    if (message === 'OK') {
+                        $('#name').val('');
+                        $('#number').val('');
+                        $('#email').val('');
+                        $('#message').val('');
+                        showSuccessMessage('Your message has been sent. Thank you for connecting with us.');
+                    } else {
+                        console.error(message);
+                        showErrorMessage('There was an error sending the message.');
+                    }
+                }
+            );
+        }
+
+        function showSuccessMessage(message) {
+            $('.success-message').text(message).fadeIn().delay(3000).fadeOut();
+        }
+
+        function showErrorMessage(message) {
+            $('.error-message').text(message).fadeIn().delay(3000).fadeOut();
+        }
+    </script>
+</body>
+</html>
