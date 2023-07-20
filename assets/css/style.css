@@ -716,6 +716,7 @@
   .app {
     overflow: hidden;
     padding-block-end: 0;
+    margin-left: 60px;
   }
   
   .app-wrapper {
@@ -742,13 +743,54 @@
     border-radius: 50px;
   }
   /* ////////////////////////////////////////////////////////////////////////////// */
+  section#need-help {
+    background-color: var(--eerie-black-2);
+    padding: 20px;
+    border-radius: var(--radius-12);
+  }
+  
+  .need {
+    color: var(--white);
+    font-size: var(--fs-2);
+    font-weight: var(--fw-700);
+    text-align: center;
+  }
+  
+  p.need-text {
+    color: var(--white);
+    font-size: var(--fs-5);
+    text-align: center;
+    margin-bottom: 0;
+  }
+  
+  a.chatbot-link, a.faq-link {
+    color: var(--white);
+    font-size: var(--fs-5);
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+    border: 1px solid var(--white);
+    cursor: pointer;
+  }
+  
+  a.chatbot-link:hover, a.faq-link:hover {
+    background-color: var(--white);
+    color: var(--eerie-black-1);
+  }
+  
+  img.chatbot-icon, img.faq-icon {
+    width: 50px;
+  }
+  
+  
   
   
   /* ////////////////////////////////////////////////////////////////////////// */
   .section.risk {
+    background-color: var(--eerie-black-1);
     padding-block: var(--section-padding);
     margin-block-end: 40px;
-    border-bottom: 1px solid var(--raisin-black);
+   
   }
   
   .section.risk .image-and-text {
@@ -781,7 +823,24 @@
   
   .section.risk p {
     margin-block: 15px 40px;
+    
   }
+  /* ///////////////////////////////////////////////////////////////////////// */
+  .section.contact {
+    background-color: var(--eerie-black-2);
+    margin-block-end: 40px;
+    
+    padding: 20px;
+  }
+  .text-align{
+    text-align: center;
+    
+  }
+  .bt{
+    margin-left: 550px;
+  }
+
+
   
   
   
@@ -873,8 +932,8 @@
   /**
    * responsive for larger than 575px screen
    */
+   @media screen and (max-width: 480px){
   
-  @media (min-width: 575px) {
     
     /**
      * CUSTOM PROPERTY
@@ -902,6 +961,7 @@
       width: 100%;
       margin-inline: auto;
     }
+    
   
   
   
@@ -910,8 +970,13 @@
      */
   
     .hero-text { --fs-5: 2rem; }
-  
+    .bt {
+ 
+    margin-right: 40px;
+    margin-left: 100px;
+    }
   }
+
   
   
   
@@ -1027,8 +1092,9 @@
     }
   
     .copyright { margin-block-end: 0; }
-  
+   
   }
+
   
   
   
@@ -1141,7 +1207,7 @@
     .app-content { margin-block: 50px; }
   
   }
-  
+
   
   
   
