@@ -1,0 +1,24 @@
+
+/* Previous styles remain the same */
+
+.scrolling-list {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    animation: scrollList 20s linear infinite; /* Animation for scrolling */
+  }
+  
+  @keyframes scrollList {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  

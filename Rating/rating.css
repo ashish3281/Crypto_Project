@@ -1,0 +1,115 @@
+body {
+    background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .container {
+    width: 400px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .star-widget label {
+    font-size: 40px;
+    color: #444;
+    padding: 10px;
+    transition: color 0.3s;
+    cursor: pointer;
+  }
+  
+  .star-widget input:checked ~ label,
+  .star-widget label:hover {
+    color: #fd4;
+  }
+  
+  .textarea textarea {
+    height: 120px;
+    width: 100%;
+    outline: none;
+    color: #eee;
+    border: 1px solid #333;
+    background: #222;
+    font-size: 16px;
+    resize: vertical;
+    transition: border-color 0.3s;
+  }
+  
+  .textarea textarea:focus {
+    border-color: #444;
+  }
+  
+  .btn button {
+    height: 40px;
+    width: 50%;
+    border: none;
+    outline: none;
+    background: #1b1b1b;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background 0.3s;
+  }
+  
+  .btn button:hover {
+    background: #0f0c29;
+  }
+  
+  .reviews {
+    margin-top: 30px;
+  }
+  
+  .review-item {
+    border-bottom: 1px solid #444;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .review-rating {
+    color: #fd4;
+    font-weight: 600;
+    margin-right: 10px;
+  }
+  
+  .review-text {
+    font-size: 14px;
+    flex: 1;
+  }
+  .reviews h2{
+    color: white;
+    margin-left: 100px;
+  }
+  
+  .delete-button {
+    background: none;
+    border: none;
+    color: #ff6961;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .delete-button:hover {
+    color: #d00000;
+  }
+  

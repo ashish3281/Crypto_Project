@@ -1,3 +1,76 @@
+window.addEventListener("load", function () {
+    var popup = document.querySelector(".popup");
+
+    // Check if the user has interacted with the check image (using localStorage)
+    var hasInteractedWithImage = localStorage.getItem("hasInteractedWithImage");
+
+    if (!hasInteractedWithImage) {
+        setTimeout(function open(event) {
+            popup.style.opacity = "1";
+            popup.style.display = "block";
+            fadeIn(popup, 300);
+            document.body.classList.add("popup-visible");
+        }, 1000);
+    }
+});
+
+document.querySelector("#close").addEventListener("click", function () {
+    var popup = document.querySelector(".popup");
+    fadeOut(popup, 300);
+    setTimeout(function () {
+        popup.style.display = "none";
+        document.body.classList.remove("popup-visible");
+    }, 300);
+});
+
+// Handle the check image click
+document.querySelector(".check-image").addEventListener("click", function () {
+    localStorage.setItem("hasInteractedWithImage", "true");
+});
+
+
+// Function to fade in an element
+function fadeIn(element, duration) {
+  var opacity = 0;
+  var interval = 10;
+  var gap = interval / duration;
+
+  element.style.display = "block";
+  element.style.opacity = opacity;
+
+  function increaseOpacity() {
+      opacity += gap;
+
+      if (opacity >= 1) {
+          clearInterval(fading);
+      }
+
+      element.style.opacity = opacity;
+  }
+
+  var fading = setInterval(increaseOpacity, interval);
+}
+
+// Function to fade out an element
+function fadeOut(element, duration) {
+  var opacity = 1;
+  var interval = 10;
+  var gap = interval / duration;
+
+  function decreaseOpacity() {
+      opacity -= gap;
+
+      if (opacity <= 0) {
+          clearInterval(fading);
+          element.style.display = "none";
+      }
+
+      element.style.opacity = opacity;
+  }
+
+  var fading = setInterval(decreaseOpacity, interval);
+}
+
 'use strict';
 
 
@@ -95,3 +168,9 @@ const scrollReveal = function () {
 scrollReveal();
 
 addEventOnElem(window, "scroll", scrollReveal);
+
+
+
+
+
+
